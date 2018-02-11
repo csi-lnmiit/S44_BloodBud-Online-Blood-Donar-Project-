@@ -1,0 +1,32 @@
+<% include ../partials/header.ejs %>
+<div class="container">
+    <header class="jumbotron">
+        <div class="container  text-center">
+            <h1>Welcome To Online Blood Donation platform</h1>
+            <p class="lead">To give blood you need neither extra strength nor extra food,and you will save a life.</p>
+        </div>
+    </header>
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <div class="col-md-4 col-sm-4">
+            <div class="img-thumbnail">
+                <%if(!currentUser){%>
+                    <a class="btn btn-primary btn-lg" href="/signUp" role="button">Register as a donor</a>
+                <% }else{ %>   
+                    <a class="btn btn-primary btn-lg" href="/profile" role="button">My profile</a>
+                <% }%>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="img-thumbnail">
+                <a class="btn btn-primary btn-lg" href="/findDonor" role="button">Find a blood donor</a>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="img-thumbnail">
+                <a class="btn btn-primary btn-lg" href="/camp" role="button">Organize a camp</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs %>

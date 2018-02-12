@@ -4,14 +4,12 @@ var hotl    = require("../models/hotel");
 var middleWareObj = require("../middleware");
 
 router.get("/",function(req,res){
-    console.log("In hotels");
     hotl.find({},function(err,allHotel){
         if(err){
             
             console.log(err);
         }else{
             res.render("hotel/index",{hotels: allHotel});
-           
         }
     });
 });

@@ -5,7 +5,7 @@ var express                 = require("express"),
     passport                = require("passport"),
     localStrategy           = require("passport-local"),
     passportLocalMongoose   = require("passport-local-mongoose"),
-    comment                 = require("./models/comment"),
+    
     flash                   = require("connect-flash"),
     hotl                    = require("./models/hotel"),
     user                    = require("./models/user"),
@@ -13,11 +13,11 @@ var express                 = require("express"),
     methodOverride          = require("method-override");
 
 var hotelRoutes   = require("./routes/hotels"),
-    commentRoutes = require("./routes/comments"),
+    //commentRoutes = require("./routes/comments"),
     indexRoutes   = require("./routes/index");
     
 mongoose.Promise = global.Promise; 
-mongoose.connect("mongodb://localhost/blood_app");
+mongoose.connect("mongodb://localhost/blood");
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine","ejs");
 app.use(express.static(__dirname + "/public")); //find the stylesheets in public dir
@@ -48,7 +48,7 @@ app.use(function(req,res,next){
 });
 
 app.use("/hotels",hotelRoutes);
-app.use("/hotels/:id/comment",commentRoutes);
+//app.use("/hotels/:id/comment",commentRoutes);
 app.use("/",indexRoutes);
 
 app.get("/",function(req,res){ 

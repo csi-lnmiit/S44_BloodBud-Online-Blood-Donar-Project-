@@ -1,0 +1,61 @@
+<% include ./partials/header.ejs %>
+
+<div class="container">
+     <h1 class="text-center">Sign Up</h1>
+    <div class="row">
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/signUp" method="POST">
+                <div class="row">
+                    <div class="col form-group">
+                        <input class="form-control" name="user[fname]" type="text" placeholder="First name" required>
+                    </div>
+                    <div class="col form-group">
+                        <input class="form-control" name="user[lname]" type="text" placeholder="Last name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="user[username]" type="text" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="user[password]" type="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="user[bloodG]" required>
+                          <option>A+</option>
+                          <option>B+</option>
+                          <option>AB+</option>
+                          <option>O+</option>
+                          <option>O-</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="user[mob]" type="text" placeholder="Mobile Number" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="user[country]" type="text" placeholder="Country" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="user[state]" type="text" placeholder="State" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="user[city]" type="text" placeholder="City" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="user[email]" type="text" placeholder="Email Id" required>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="user[status]" required>
+                          <option>Available</option>
+                          <option>UnAvailable</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Sign Up</button>
+                </div>
+            </form>
+            <a href="/hotels">Go Back</a>
+        </div>
+    </div>
+</div>
+
+<% include ./partials/footer.ejs %>
